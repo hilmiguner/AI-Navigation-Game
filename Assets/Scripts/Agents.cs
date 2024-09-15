@@ -11,16 +11,12 @@ public class Agents : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        target = GameObject.Find("Target");
     }
 
     // Update is called once per frame
     void Update()
     {
         if(target != null) navMeshAgent.SetDestination(target.transform.position);
-    }
-
-    public void SetTarget(GameObject target)
-    {
-        this.target = target;
     }
 }
